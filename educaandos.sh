@@ -62,6 +62,7 @@ KERNELVER=$(uname -r)
   	sudo rm /etc/apt/sources.list.d/focal.list
 	sudo apt-get update -y
 	cd ~
+	sudo rm -r smartdre
 	
 	echo ""
 	echo "Reinicie el PC o cierre sesión para que los drivers funcionen"
