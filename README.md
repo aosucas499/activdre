@@ -24,3 +24,5 @@ An application for <b>linux</b>, to install drivers/software for old digital boa
     ./install
     
     sudo reboot (Reboot the system - Reiniciar el sistema)
+
+![](https://github.com/aosucas499/guadalinex/blob/main/im%C3%A1genes/ubuntu_promethean.png)
