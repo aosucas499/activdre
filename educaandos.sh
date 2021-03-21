@@ -20,6 +20,7 @@ KERNELVER=$(uname -r)
 	sudo dpkg -i libssl1.0.0_1.0.2n-1ubuntu5.4_amd64.deb
 	#wget http://security.ubuntu.com/ubuntu/pool/main/i/icu/libicu60_60.2-3ubuntu3.1_amd64.deb
 	sudo dpkg -i libicu60_60.2-3ubuntu3.1_amd64.deb
+	#sudo dpkg -i zlib1g_1.2.11.dfsg-2ubuntu1_amd64.deb
 	
 	# Paquetes necesarios activinspire
 	sudo apt-get update -y
