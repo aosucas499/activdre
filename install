@@ -34,7 +34,7 @@ KERNELVER=$(uname -r)
 	sudo apt-get update -y
 	sudo apt install activaid activdriver activtools -y
 	sudo apt install --fix-broken -y
-	sudo apt autoremove -y
+	#sudo apt autoremove -y
 	
 	#Instalación de activinspire
 	#wget http://centros.edu.guadalinex.org/Edu/fenixscpdi/pool/main/a/activinspire-licence/activinspire-licence_0.1-3_all.deb
