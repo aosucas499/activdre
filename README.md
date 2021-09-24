@@ -9,7 +9,7 @@ An application for <b>linux</b>, to install drivers/software for old digital boa
 + Ubuntu Focal and Bionic with kernel 5.X
 + Linux Mint based on Ubuntu Focal and Bionic with kernel 5.X
 
-## USAGE
+## INSTALL
 
     sudo apt-get update -y
     
