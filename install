@@ -37,8 +37,8 @@ KERNELVER=$(uname -r)
 	sudo apt autoremove -y
 	
 	#Instalación de activinspire
-	#wget http://centros.edu.guadalinex.org/Edu/fenixscpdi/pool/main/a/activinspire-licence/activinspire-licence_0.1-3_all.deb
-	sudo dpkg -i activinspire-licence_0.1-3_all.deb
+	wget http://centros.edu.guadalinex.org/Edu/fenixscpdi/pool/main/a/activinspire-licence/activinspire-licence_0.1-3_all.deb
+	#sudo dpkg -i activinspire-licence_0.1-3_all.deb
 	sudo apt install activ-meta-es -y
 	sudo dpkg -i promethean-fixboot_0.2_all.deb
 
