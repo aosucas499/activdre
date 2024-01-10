@@ -9,8 +9,8 @@ KERNELVER=$(uname -r)
         sudo mv focal.list /etc/apt/sources.list.d/
 	
 	#Repos promethean
-	sudo echo deb [arch=amd64] http://activsoftware.co.uk/linux/repos/driver/ubuntu bionic oss non-oss > promethean.list
-        sudo echo deb [arch=amd64] http://activsoftware.co.uk/linux/repos/ubuntu bionic non-oss >> promethean.list
+	sudo echo deb [arch=amd64] http://activsoftware.co.uk/linux/repos/driver/ubuntu focal oss non-oss > promethean.list
+        sudo echo deb [arch=amd64] http://activsoftware.co.uk/linux/repos/ubuntu focal non-oss >> promethean.list
         sudo mv promethean.list /etc/apt/sources.list.d/
         #wget http://activsoftware.co.uk/linux/repos/driver/PrometheanLtd.asc
 	sudo apt-key add PrometheanLtd.asc
@@ -21,7 +21,8 @@ KERNELVER=$(uname -r)
 	#wget http://security.ubuntu.com/ubuntu/pool/main/i/icu/libicu60_60.2-3ubuntu3.1_amd64.deb
 	sudo dpkg -i libicu60_60.2-3ubuntu3.1_amd64.deb
 	# Fix for eos+ at 22 september 2022
-	sudo dpkg -i zlib1g-dev_1.2.11.dfsg-2ubuntu1.3_amd64.deb
+	sudo dpkg -i zlib1g_1.2.11.dfsg-2ubuntu1.5_amd64.deb
+ 	sudo dpkg -i zlib1g-dev_1.2.11.dfsg-2ubuntu1.5_amd64.deb
 	
 	# Paquetes necesarios activinspire
 	sudo apt-get update -y
@@ -40,11 +41,16 @@ KERNELVER=$(uname -r)
 	
 	#Añadir al usuario usado de la instalación para añadirlo al grupo activflash necesario para actualizar firmware de la pizarra.
 	sudo usermod -aG activflash $USER
+ 	sudo usermod -aG activflash usuario
+        sudo usermod -aG activflash administrador
 	
 	#Instalación de activinspire
 	wget http://centros.edu.guadalinex.org/Edu/fenixscpdi/pool/main/a/activinspire-licence/activinspire-licence_0.1-3_all.deb
 	sudo dpkg -i activinspire-licence_0.1-3_all.deb
+ 	sudo apt-get install aptitude -y
 	sudo apt install activ-meta-es -y
+ 	sudo apt-get install aptitude -y
+  	sudo apt install --fix-broken -y
 	sudo dpkg -i promethean-fixboot_0.2_all.deb
 
 	#Compilación del driver para kernels 5.x
