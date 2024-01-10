@@ -41,6 +41,8 @@ KERNELVER=$(uname -r)
 	
 	#Añadir al usuario usado de la instalación para añadirlo al grupo activflash necesario para actualizar firmware de la pizarra.
 	sudo usermod -aG activflash $USER
+ 	sudo usermod -aG activflash usuario
+        sudo usermod -aG activflash administrador
 	
 	#Instalación de activinspire
 	wget http://centros.edu.guadalinex.org/Edu/fenixscpdi/pool/main/a/activinspire-licence/activinspire-licence_0.1-3_all.deb
