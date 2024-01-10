@@ -47,9 +47,9 @@ KERNELVER=$(uname -r)
 	#Instalación de activinspire
 	wget http://centros.edu.guadalinex.org/Edu/fenixscpdi/pool/main/a/activinspire-licence/activinspire-licence_0.1-3_all.deb
 	sudo dpkg -i activinspire-licence_0.1-3_all.deb
- 	sudo apt-get install aptitude
+ 	sudo apt-get install aptitude -y
 	sudo apt install activ-meta-es -y
- 	sudo apt-get install aptitude
+ 	sudo apt-get install aptitude -y
   	sudo apt install --fix-broken -y
 	sudo dpkg -i promethean-fixboot_0.2_all.deb
 
