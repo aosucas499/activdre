@@ -21,7 +21,8 @@ KERNELVER=$(uname -r)
 	#wget http://security.ubuntu.com/ubuntu/pool/main/i/icu/libicu60_60.2-3ubuntu3.1_amd64.deb
 	sudo dpkg -i libicu60_60.2-3ubuntu3.1_amd64.deb
 	# Fix for eos+ at 22 september 2022
-	sudo dpkg -i zlib1g-dev_1.2.11.dfsg-2ubuntu1.3_amd64.deb
+	sudo dpkg -i zlib1g_1.2.11.dfsg-2ubuntu1.5_amd64.deb
+ 	sudo dpkg -i zlib1g-dev_1.2.11.dfsg-2ubuntu1.5_amd64.deb
 	
 	# Paquetes necesarios activinspire
 	sudo apt-get update -y
