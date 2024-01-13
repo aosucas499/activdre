@@ -45,7 +45,8 @@ KERNELVER=$(uname -r)
 	sudo apt autoremove -y
 	
 	#Añadir al usuario usado de la instalación para añadirlo al grupo activflash necesario para actualizar firmware de la pizarra.
-	sudo usermod -aG activflash $USER
+	sudo groupadd activflash
+        sudo usermod -aG activflash $USER
  	sudo usermod -aG activflash usuario
         sudo usermod -aG activflash administrador
 	
