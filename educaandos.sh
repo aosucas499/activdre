@@ -20,7 +20,6 @@ KERNELVER=$(uname -r)
 	sudo apt-key add PrometheanLtd.asc
 	
 	# Paquetes necesarios activdriver
- 	sudo dpkg -i libelf-dev_0.176-1.1ubuntu0.1_amd64.deb
 	#wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu5.4_amd64.deb
 	sudo dpkg -i libssl1.0.0_1.0.2n-1ubuntu5.4_amd64.deb
 	#wget http://security.ubuntu.com/ubuntu/pool/main/i/icu/libicu60_60.2-3ubuntu3.1_amd64.deb
@@ -28,6 +27,7 @@ KERNELVER=$(uname -r)
 	# Fix for eos+ at 22 september 2022
 	sudo dpkg -i zlib1g_1.2.11.dfsg-2ubuntu1.5_amd64.deb
  	sudo dpkg -i zlib1g-dev_1.2.11.dfsg-2ubuntu1.5_amd64.deb
+  	sudo dpkg -i libelf-dev_0.176-1.1ubuntu0.1_amd64.deb
 	
 	# Paquetes necesarios activinspire
 	sudo apt-get update -y
