@@ -4,6 +4,10 @@ KERNELVER=$(uname -r)
 
 # Instalar drivers pizarra Promethean y programa activinspire en educaAndOs 20.04 (ubuntu focal based)
 
+	# Disable temporary cga repository (now they have promethean new packages)
+ 	sudo mv /etc/apt/sources.list /etc/apt/sources.list-disable
+  	sudo mv /etc/apt/sources.list.d/educaandossc.list /etc/apt/sources.list.d/educaandossc.list-disable
+
 	#Repos Ubuntu focal
 	sudo echo "deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ focal main universe multiverse restricted" > focal.list
         sudo mv focal.list /etc/apt/sources.list.d/
@@ -72,6 +76,8 @@ KERNELVER=$(uname -r)
   	#Borrado de archivos
   	sudo rm -r /etc/apt/sources.list.d/promethean.list
   	sudo rm /etc/apt/sources.list.d/focal.list
+   	sudo mv /etc/apt/sources.list-disable /etc/apt/sources.list
+  	sudo mv /etc/apt/sources.list.d/educaandossc.list-disable /etc/apt/sources.list.d/educaandossc.list
 	sudo apt-get update -y
 	cd ~
 	sudo rm -r activdre
