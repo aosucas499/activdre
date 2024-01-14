@@ -27,6 +27,7 @@ KERNELVER=$(uname -r)
 	# Fix for eos+ at 22 september 2022
 	sudo dpkg -i zlib1g_1.2.11.dfsg-2ubuntu1.5_amd64.deb
  	sudo dpkg -i zlib1g-dev_1.2.11.dfsg-2ubuntu1.5_amd64.deb
+  	sudo dpkg -i libelf1_0.176-1.1ubuntu0.1_amd64.deb
   	sudo dpkg -i libelf-dev_0.176-1.1ubuntu0.1_amd64.deb
 	
 	# Paquetes necesarios activinspire
