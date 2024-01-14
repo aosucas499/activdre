@@ -83,7 +83,14 @@ KERNELVER=$(uname -r)
 	sudo apt-get update -y
 	cd ~
 	sudo rm -r activdre
-	
+
+ 	# Bloqueo de los paquetes para que no se actualicen con la versión del cga.
+  	sudo apt-mark hold activaid
+	sudo apt-mark hold activdriver
+ 	sudo apt-mark hold activtools
+  	sudo apt-mark hold activinspire
+   	sudo apt-mark hold activ-meta-es
+    
 	echo ""
 	echo "Reinicie el PC o cierre sesión para que los drivers funcionen"
 	notify-send "Reinicie el PC o cierre sesión para que los drivers funcionen"
