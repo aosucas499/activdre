@@ -66,7 +66,7 @@ function activDriverBionic {
 	echo ""
 	cd /usr/src/promethean/kernel/
 	sudo ./b
- 	cd -
+ 	cd /home/${SUDO_USER:-$USER}/activdre
 	
 	#Añadir al usuario usado de la instalación para añadirlo al grupo activflash necesario para actualizar firmware de la pizarra.
 	sudo groupadd activflash
