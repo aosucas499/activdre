@@ -244,12 +244,12 @@ function activInspireFocal {
 	sudo dpkg -i promethean-fixboot_0.2_all.deb
   	
 	#Borrado de archivos
-  	#sudo rm -r /etc/apt/sources.list.d/promethean.list
-  	#sudo rm /etc/apt/sources.list.d/focal.list
-   	#sudo mv /etc/apt/sources.list-disable /etc/apt/sources.list
-  	#sudo mv /etc/apt/sources.list.d/educaandossc.list-disable /etc/apt/sources.list.d/educaandossc.list
-	#sudo apt-get update -y
-	#sudo apt autoremove -y
+  	sudo rm -r /etc/apt/sources.list.d/promethean.list
+  	sudo rm /etc/apt/sources.list.d/focal.list
+   	sudo mv /etc/apt/sources.list-disable /etc/apt/sources.list
+  	sudo mv /etc/apt/sources.list.d/educaandossc.list-disable /etc/apt/sources.list.d/educaandossc.list
+	sudo apt-get update -y
+	sudo apt autoremove -y
  
 	# Bloqueo de los paquetes para que no se actualicen con la versión del cga.
   	sudo apt-mark hold activinspire
@@ -272,7 +272,7 @@ function inspireEOS {
 	#sudo apt autoremove -y
 }
 
-	# Establecer la instalación dependiendo del kernel. 
+# Establecer la instalación dependiendo del kernel. 
 # 
 	if [[ $KERNELVER = 5.4.0-66-generic ]]
 	then
