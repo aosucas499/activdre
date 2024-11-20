@@ -269,33 +269,31 @@ function inspireEOS {
 	sudo apt autoremove -y
 }
 
-# Establecer la instalación dependiendo del kernel. 
-# 
-	if [[ $KERNELVER > 5.0 && $KERNELVER < 5.15.0-107-generic ]]
-	then
-		activDriverBionic
-		activInspireBionic
-		cd ~
-		sudo rm -r activdre
+# Establecer la instalación dependiendo del kernel.
+if dpkg --compare-versions "$KERNELVER" gt "5.0" && dpkg --compare-versions "$KERNELVER" lt "5.15.0-107"; then
+    activDriverBionic
+    activInspireBionic
+    cd ~
+    sudo rm -r activdre
 
-    	elif
-    	[[ $KERNELVER = 5.15.0-107-generic ]]
-    	then
-        	#activDriverFocal
-		#activInspireBionic
-  		driverEOS
-    		inspireEOS
-		cd ~
-		sudo rm -r activdre
-    	else
-        	echo ""
-		echo -e "${ROJO}Esta instalación no es compatible con tu sistema${NORMAL}" 
-		echo ""
-		echo -e "${ROJO}This install process is not compatible with your system${NORMAL}"
-		echo ""
-		sleep 4
-		exit
-    	fi
+elif [[ $KERNELVER == "5.15.0-107-generic" ]]; then
+    # activDriverFocal
+    # activInspireBionic
+    driverEOS
+    inspireEOS
+    cd ~
+    sudo rm -r activdre
+
+else
+    echo ""
+    echo -e "${ROJO}Esta instalación no es compatible con tu sistema${NORMAL}" 
+    echo ""
+    echo -e "${ROJO}This install process is not compatible with your system${NORMAL}"
+    echo ""
+    sleep 4
+    exit
+fi
+
 
 sleep 2
 echo ""
