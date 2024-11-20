@@ -29,7 +29,7 @@ function activDriverBionic {
         sudo mv focal.list /etc/apt/sources.list.d/
 	
 	#Repos promethean
-	sudo echo deb [arch=amd64] http://activsoftware.co.uk/linux/repos/driver/ubuntu bionic oss non-oss > promethean.list
+	sudo echo "deb [arch=amd64] http://activsoftware.co.uk/linux/repos/driver/ubuntu bionic oss non-oss" > promethean.list
         sudo mv promethean.list /etc/apt/sources.list.d/
         #wget http://activsoftware.co.uk/linux/repos/driver/PrometheanLtd.asc
 	sudo apt-key add PrometheanLtd.asc
@@ -108,7 +108,7 @@ function activDriverFocal {
         sudo mv focal.list /etc/apt/sources.list.d/
 	
 	#Repos promethean
-	sudo echo deb [arch=amd64] http://activsoftware.co.uk/linux/repos/driver/ubuntu focal oss non-oss > promethean.list
+	sudo echo "deb [arch=amd64] http://activsoftware.co.uk/linux/repos/driver/ubuntu focal oss non-oss" > promethean.list
         sudo mv promethean.list /etc/apt/sources.list.d/
         #wget http://activsoftware.co.uk/linux/repos/driver/PrometheanLtd.asc
 	sudo apt-key add PrometheanLtd.asc
@@ -174,7 +174,7 @@ function activInspireBionic {
         sudo mv focal.list /etc/apt/sources.list.d/
 	
 	#Repos promethean
-	sudo echo deb [arch=amd64] http://activsoftware.co.uk/linux/repos/ubuntu bionic non-oss > promethean.list
+	sudo echo "deb [arch=amd64] http://activsoftware.co.uk/linux/repos/ubuntu bionic non-oss" > promethean.list
         sudo mv promethean.list /etc/apt/sources.list.d/
 	sudo apt-key add PrometheanLtd.asc
   	
@@ -226,7 +226,7 @@ function activInspireFocal {
         sudo mv focal.list /etc/apt/sources.list.d/
 	
 	#Repos promethean
-	sudo echo deb [arch=amd64] http://activsoftware.co.uk/linux/repos/ubuntu focal non-oss > promethean.list
+	sudo echo "deb [arch=amd64] http://activsoftware.co.uk/linux/repos/ubuntu focal non-oss" > promethean.list
         sudo mv promethean.list /etc/apt/sources.list.d/
 	sudo apt-key add PrometheanLtd.asc
   	
