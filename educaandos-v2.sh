@@ -11,6 +11,15 @@ DESKTOP=$XDG_CURRENT_DESKTOP
 KERNELVER=$(uname -r)
 
 function activDriverBionic {
+
+	# Desbloqueo paquetes en caso de instalación anterior
+  	sudo apt-mark unhold activaid
+	sudo apt-mark unhold activdriver
+ 	sudo apt-mark unhold activtools
+
+  	# Desinstalación de paquetes en caso de instalación anterior
+   	sudo apt purge --remove activtools activaid activdriver activtools -y
+  
         # Disable temporary cga repository (now they have promethean new packages)
  	sudo mv /etc/apt/sources.list /etc/apt/sources.list-disable
   	sudo mv /etc/apt/sources.list.d/educaandossc.list /etc/apt/sources.list.d/educaandossc.list-disable
@@ -41,7 +50,7 @@ function activDriverBionic {
 	sudo apt-get update -y
 	sudo apt install activaid activdriver activtools -y
 	sudo apt install --fix-broken -y
-	sudo apt autoremove -y
+	#sudo apt autoremove -y
 		
 	#Compilación del driver para kernels 5.x
 	echo ""
@@ -57,7 +66,7 @@ function activDriverBionic {
 	echo ""
 	cd /usr/src/promethean/kernel/
 	sudo ./b
- cd -
+ 	cd -
 	
 	#Añadir al usuario usado de la instalación para añadirlo al grupo activflash necesario para actualizar firmware de la pizarra.
 	sudo groupadd activflash
@@ -79,7 +88,18 @@ function activDriverBionic {
 }
 
 function activDriverFocal {
-        # Disable temporary cga repository (now they have promethean new packages)
+        # Desbloqueo paquetes en caso de instalación anterior
+  	sudo apt-mark unhold activaid
+	sudo apt-mark unhold activdriver
+ 	sudo apt-mark unhold activtools
+
+  	# Desinstalación de paquetes en caso de instalación anterior
+   	sudo apt purge --remove activtools activaid activdriver activtools -y
+
+  	# Desinstalación de paquetes en caso de instalación anterior
+   	sudo apt purge --remove activtools activaid activdriver activtools -y
+	
+ 	# Disable temporary cga repository (now they have promethean new packages)
  	sudo mv /etc/apt/sources.list /etc/apt/sources.list-disable
   	sudo mv /etc/apt/sources.list.d/educaandossc.list /etc/apt/sources.list.d/educaandossc.list-disable
 
@@ -98,7 +118,7 @@ function activDriverFocal {
 	sudo apt install activaid activdriver activtools -y
 	sudo apt install --fix-broken -y
 	sudo apt install -f -y
-	sudo apt autoremove -y
+	#sudo apt autoremove -y
 	
 	#Añadir al usuario usado de la instalación para añadirlo al grupo activflash necesario para actualizar firmware de la pizarra.
 	sudo groupadd activflash
@@ -119,7 +139,32 @@ function activDriverFocal {
  	sudo apt-mark hold activtools
 }
 
+function driverEOS {
+        # Desbloqueo paquetes en caso de instalación anterior
+  	sudo apt-mark unhold activaid
+	sudo apt-mark unhold activdriver
+ 	sudo apt-mark unhold activtools
+
+  	# Desinstalación de paquetes en caso de instalación anterior
+   	sudo apt purge --remove activtools activaid activdriver activtools -y
+  
+	#Instalación de activdriver
+	sudo apt-get update -y
+	sudo apt install activaid activdriver activtools -y
+	sudo apt install --fix-broken -y
+	sudo apt install -f -y
+	#sudo apt autoremove -y
+}
+
 function activInspireBionic {
+
+	# Desbloqueo paquetes en caso de instalación anterior
+  	sudo apt-mark unhold activinspire
+	sudo apt-mark unhold activ-meta-es
+
+ 	# Desinstalación de paquetes en caso de instalación anterior
+   	sudo apt purge --remove activtools activresources-core-es activinspire-help-es activinspire -y
+ 
         # Disable temporary cga repository (now they have promethean new packages)
  	sudo mv /etc/apt/sources.list /etc/apt/sources.list-disable
   	sudo mv /etc/apt/sources.list.d/educaandossc.list /etc/apt/sources.list.d/educaandossc.list-disable
@@ -164,6 +209,14 @@ function activInspireBionic {
 }
 
 function activInspireFocal {
+
+	# Desbloqueo paquetes en caso de instalación anterior
+  	sudo apt-mark unhold activinspire
+	sudo apt-mark unhold activ-meta-es
+
+ 	# Desinstalación de paquetes en caso de instalación anterior
+   	sudo apt purge --remove activtools activresources-core-es activinspire-help-es activinspire -y
+ 
         # Disable temporary cga repository (now they have promethean new packages)
  	sudo mv /etc/apt/sources.list /etc/apt/sources.list-disable
   	sudo mv /etc/apt/sources.list.d/educaandossc.list /etc/apt/sources.list.d/educaandossc.list-disable
@@ -191,15 +244,32 @@ function activInspireFocal {
 	sudo dpkg -i promethean-fixboot_0.2_all.deb
   	
 	#Borrado de archivos
-  	sudo rm -r /etc/apt/sources.list.d/promethean.list
-  	sudo rm /etc/apt/sources.list.d/focal.list
-   	sudo mv /etc/apt/sources.list-disable /etc/apt/sources.list
-  	sudo mv /etc/apt/sources.list.d/educaandossc.list-disable /etc/apt/sources.list.d/educaandossc.list
-	sudo apt-get update -y
-	
+  	#sudo rm -r /etc/apt/sources.list.d/promethean.list
+  	#sudo rm /etc/apt/sources.list.d/focal.list
+   	#sudo mv /etc/apt/sources.list-disable /etc/apt/sources.list
+  	#sudo mv /etc/apt/sources.list.d/educaandossc.list-disable /etc/apt/sources.list.d/educaandossc.list
+	#sudo apt-get update -y
+	#sudo apt autoremove -y
+ 
 	# Bloqueo de los paquetes para que no se actualicen con la versión del cga.
   	sudo apt-mark hold activinspire
    	sudo apt-mark hold activ-meta-es
+}
+
+function inspireEOS {
+        # Desbloqueo paquetes en caso de instalación anterior
+  	sudo apt-mark unhold activinspire
+	sudo apt-mark unhold activ-meta-es
+
+ 	# Desinstalación de paquetes en caso de instalación anterior
+   	sudo apt purge --remove activtools activresources-core-es activinspire-help-es activinspire -y
+  
+	#Instalación de activdriver
+	sudo apt-get update -y
+	sudo apt install activ-meta-es -y
+	sudo apt install --fix-broken -y
+	sudo apt install -f -y
+	#sudo apt autoremove -y
 }
 
 	# Establecer la instalación dependiendo del kernel. 
@@ -209,15 +279,17 @@ function activInspireFocal {
 		activDriverBionic
 		activInspireBionic
 		cd ~
-		sudo rm -r activdre
+		#sudo rm -r activdre
 
     	elif
     	[[ $KERNELVER = 5.15.0-107-generic ]]
     	then
-        	activDriverFocal
-		activInspireBionic
+        	#activDriverFocal
+		#activInspireBionic
+  		driverEOS
+    		inspireEOS
 		cd ~
-		sudo rm -r activdre
+		#sudo rm -r activdre
     	else
         	echo ""
 		echo -e "${ROJO}Esta instalación no es compatible con tu sistema${NORMAL}" 
