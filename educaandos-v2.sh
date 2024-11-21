@@ -238,7 +238,7 @@ function activInspireFocal {
 	sudo apt install activ-meta-es -y
  	sudo apt-get install aptitude -y
   	sudo apt install --fix-broken -y
-	sudo dpkg -i promethean-fixboot_0.2_all.deb
+	#sudo dpkg -i promethean-fixboot_0.2_all.deb
   	
 	#Borrado de archivos
   	sudo rm -r /etc/apt/sources.list.d/promethean.list
@@ -262,6 +262,8 @@ function inspireEOS {
    	sudo apt purge --remove activtools activresources-core-es activinspire-help-es activinspire -y
   
 	#Instalación de activdriver
+ 	wget http://centros.edu.guadalinex.org/Edu/fenixscpdi/pool/main/a/activinspire-licence/activinspire-licence_0.1-3_all.deb
+	sudo dpkg -i activinspire-licence_0.1-3_all.deb
 	sudo apt-get update -y
 	sudo apt install activ-meta-es -y
 	sudo apt install --fix-broken -y
@@ -275,6 +277,7 @@ if dpkg --compare-versions "$KERNELVER" gt "5.0" && dpkg --compare-versions "$KE
     activInspireBionic
     cd ~
     sudo rm -r activdre
+    sudo rm -r guadalinex/activdre
 
 elif [[ $KERNELVER == "5.15.0-107-generic" ]]; then
     # activDriverFocal
@@ -283,6 +286,7 @@ elif [[ $KERNELVER == "5.15.0-107-generic" ]]; then
     inspireEOS
     cd ~
     sudo rm -r activdre
+    sudo rm -r guadalinex/activdre
 
 else
     echo ""
