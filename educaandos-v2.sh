@@ -18,8 +18,13 @@ function activDriverBionic {
  	sudo apt-mark unhold activtools
 
   	# Desinstalación de paquetes en caso de instalación anterior
-   	sudo apt purge --remove activtools activaid activdriver activtools -y
-  
+    	sudo modprobe -r promethean
+     	sudo rm -r /usr/src/promethean/
+      	sudo rm -r /lib/modules/${KERNELVER}/kernel/drivers/usb/promethean.ko
+       	sudo rm -r /lib/modules/${KERNELVER}/kernel/drivers/usb/input/promethean.ko
+       	sudo rm -r /lib/modules/${KERNELVER}/kernel/drivers/input/tablet/promethean.ko
+	sudo apt purge --remove activtools activaid activdriver activtools -y
+      
         # Disable temporary cga repository (now they have promethean new packages)
  	sudo mv /etc/apt/sources.list /etc/apt/sources.list-disable
   	sudo mv /etc/apt/sources.list.d/educaandossc.list /etc/apt/sources.list.d/educaandossc.list-disable
@@ -94,7 +99,12 @@ function activDriverFocal {
  	sudo apt-mark unhold activtools
 
   	# Desinstalación de paquetes en caso de instalación anterior
-   	sudo apt purge --remove activtools activaid activdriver activtools -y
+    	sudo modprobe -r promethean
+     	sudo rm -r /usr/src/promethean/
+      	sudo rm -r /lib/modules/${KERNELVER}/kernel/drivers/usb/promethean.ko
+       	sudo rm -r /lib/modules/${KERNELVER}/kernel/drivers/usb/input/promethean.ko
+       	sudo rm -r /lib/modules/${KERNELVER}/kernel/drivers/input/tablet/promethean.ko
+	sudo apt purge --remove activtools activaid activdriver activtools -y
 	
  	# Disable temporary cga repository (now they have promethean new packages)
  	sudo mv /etc/apt/sources.list /etc/apt/sources.list-disable
@@ -143,7 +153,12 @@ function driverEOS {
  	sudo apt-mark unhold activtools
 
   	# Desinstalación de paquetes en caso de instalación anterior
-   	sudo apt purge --remove activtools activaid activdriver activtools -y
+    	sudo modprobe -r promethean
+     	sudo rm -r /usr/src/promethean/
+      	sudo rm -r /lib/modules/${KERNELVER}/kernel/drivers/usb/promethean.ko
+       	sudo rm -r /lib/modules/${KERNELVER}/kernel/drivers/usb/input/promethean.ko
+       	sudo rm -r /lib/modules/${KERNELVER}/kernel/drivers/input/tablet/promethean.ko
+	sudo apt purge --remove activtools activaid activdriver activtools -y
   
 	#Instalación de activdriver
 	sudo apt-get update -y
