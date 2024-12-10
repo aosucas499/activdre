@@ -286,6 +286,11 @@ function inspireEOS {
 	sudo apt autoremove -y
 }
 
+function module5.15.0-107 {
+sudo cp compilado*kernel/5.15.0-107-generic-promethean.ko /lib/modules/${KERNELVER}/kernel/drivers/input/tablet/promethean.ko
+sudo modprobe promethean
+}
+
 # Establecer la instalación dependiendo del kernel.
 if [[ $KERNELVER == "5.4.0-66-generic" ]]; then
     activDriverBionic
@@ -299,6 +304,7 @@ elif [[ $KERNELVER == "5.15.0-107-generic" ]]; then
     activInspireBionic
     #driverEOS
     #inspireEOS
+    module5.15.0-107
     cd ~
     sudo rm -r activdre
     sudo rm -r guadalinex/activdre
