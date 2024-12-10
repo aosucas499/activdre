@@ -287,7 +287,7 @@ function inspireEOS {
 }
 
 # Establecer la instalación dependiendo del kernel.
-if dpkg --compare-versions "$KERNELVER" gt "5.0" && dpkg --compare-versions "$KERNELVER" lt "5.15.0-107"; then
+if [[ $KERNELVER == "5.4.0-66-generic" ]]; then
     activDriverBionic
     activInspireBionic
     cd ~
@@ -295,10 +295,10 @@ if dpkg --compare-versions "$KERNELVER" gt "5.0" && dpkg --compare-versions "$KE
     sudo rm -r guadalinex/activdre
 
 elif [[ $KERNELVER == "5.15.0-107-generic" ]]; then
-    # activDriverFocal
-    # activInspireBionic
-    driverEOS
-    inspireEOS
+    activDriverFocal
+    activInspireBionic
+    #driverEOS
+    #inspireEOS
     cd ~
     sudo rm -r activdre
     sudo rm -r guadalinex/activdre
