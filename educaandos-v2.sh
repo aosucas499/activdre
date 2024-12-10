@@ -107,12 +107,12 @@ function activDriverFocal {
 	sudo apt purge --remove activtools activaid activdriver activtools -y
 	
  	# Disable temporary cga repository (now they have promethean new packages)
- 	sudo mv /etc/apt/sources.list /etc/apt/sources.list-disable
-  	sudo mv /etc/apt/sources.list.d/educaandossc.list /etc/apt/sources.list.d/educaandossc.list-disable
+ 	#sudo mv /etc/apt/sources.list /etc/apt/sources.list-disable
+  	#sudo mv /etc/apt/sources.list.d/educaandossc.list /etc/apt/sources.list.d/educaandossc.list-disable
 
 	#Repos Ubuntu focal
-	sudo echo "deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ focal main universe multiverse restricted" > focal.list
-        sudo mv focal.list /etc/apt/sources.list.d/
+	#sudo echo "deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ focal main universe multiverse restricted" > focal.list
+        #sudo mv focal.list /etc/apt/sources.list.d/
 	
 	#Repos promethean
 	sudo echo "deb [arch=amd64] http://activsoftware.co.uk/linux/repos/driver/ubuntu focal oss non-oss" > promethean.list
@@ -141,9 +141,9 @@ function activDriverFocal {
 	sudo apt-get update -y
 	
 	# Bloqueo de los paquetes para que no se actualicen con la versión del cga.
-  	sudo apt-mark hold activaid
-	sudo apt-mark hold activdriver
- 	sudo apt-mark hold activtools
+  	#sudo apt-mark hold activaid
+	#sudo apt-mark hold activdriver
+ 	#sudo apt-mark hold activtools
 }
 
 function driverEOS {
@@ -230,12 +230,12 @@ function activInspireFocal {
    	sudo apt purge --remove activtools activresources-core-es activinspire-help-es activinspire -y
  
         # Disable temporary cga repository (now they have promethean new packages)
- 	sudo mv /etc/apt/sources.list /etc/apt/sources.list-disable
-  	sudo mv /etc/apt/sources.list.d/educaandossc.list /etc/apt/sources.list.d/educaandossc.list-disable
+ 	#sudo mv /etc/apt/sources.list /etc/apt/sources.list-disable
+  	#sudo mv /etc/apt/sources.list.d/educaandossc.list /etc/apt/sources.list.d/educaandossc.list-disable
 
 	#Repos Ubuntu focal
-	sudo echo "deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ focal main universe multiverse restricted" > focal.list
-        sudo mv focal.list /etc/apt/sources.list.d/
+	#sudo echo "deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ focal main universe multiverse restricted" > focal.list
+        #sudo mv focal.list /etc/apt/sources.list.d/
 	
 	#Repos promethean
 	sudo echo "deb [arch=amd64] http://activsoftware.co.uk/linux/repos/ubuntu focal non-oss" > promethean.list
@@ -264,8 +264,8 @@ function activInspireFocal {
 	sudo apt autoremove -y
  
 	# Bloqueo de los paquetes para que no se actualicen con la versión del cga.
-  	sudo apt-mark hold activinspire
-   	sudo apt-mark hold activ-meta-es
+  	#sudo apt-mark hold activinspire
+   	#sudo apt-mark hold activ-meta-es
 }
 
 function inspireEOS {
@@ -301,7 +301,7 @@ if [[ $KERNELVER == "5.4.0-66-generic" ]]; then
 
 elif [[ $KERNELVER == "5.15.0-107-generic" ]]; then
     activDriverFocal
-    activInspireBionic
+    activInspireFocal
     #driverEOS
     #inspireEOS
     module5.15.0-107
