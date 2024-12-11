@@ -175,7 +175,7 @@ function activInspireBionic {
 	sudo apt-mark unhold activ-meta-es
 
  	# Desinstalación de paquetes en caso de instalación anterior
-   	sudo apt purge --remove activtools activresources-core-es activinspire-help-es activinspire -y
+   	sudo apt purge --remove activresources-core-es activinspire-help-es activinspire -y
  
         # Disable temporary cga repository (now they have promethean new packages)
  	sudo mv /etc/apt/sources.list /etc/apt/sources.list-disable
@@ -227,7 +227,7 @@ function activInspireFocal {
 	sudo apt-mark unhold activ-meta-es
 
  	# Desinstalación de paquetes en caso de instalación anterior
-   	sudo apt purge --remove activtools activresources-core-es activinspire-help-es activinspire -y
+   	sudo apt purge --remove activresources-core-es activinspire-help-es activinspire -y
  
         # Disable temporary cga repository (now they have promethean new packages)
  	#sudo mv /etc/apt/sources.list /etc/apt/sources.list-disable
@@ -274,7 +274,7 @@ function inspireEOS {
 	sudo apt-mark unhold activ-meta-es
 
  	# Desinstalación de paquetes en caso de instalación anterior
-   	sudo apt purge --remove activtools activresources-core-es activinspire-help-es activinspire -y
+   	sudo apt purge --remove activresources-core-es activinspire-help-es activinspire -y
   
 	#Instalación de activdriver
  	wget http://centros.edu.guadalinex.org/Edu/fenixscpdi/pool/main/a/activinspire-licence/activinspire-licence_0.1-3_all.deb
